@@ -7,6 +7,5 @@ export REDIS_PASSWORD=$REDISPASSWORD
 export REDIS_PORT=$REDISPORT
 
 sed -ri -e "s/Listen 80[[:space:]]*$/Listen $PORT/" /etc/apache2/ports.conf
-# sed -ri -e "s/VirtualHost \*:80/VirtualHost *:$PORT/" /etc/apache2/sites-available/*.conf
 
 docker-php-entrypoint apache2-foreground

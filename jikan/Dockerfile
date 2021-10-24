@@ -1,8 +1,6 @@
 # The following Dockerfile is largely taken from https://github.com/fethica/jikan-rest-docker.
 
-# Jikan API v3 might not fully support 7.4.
-# Also, the official production instance uses 7.3.
-FROM php:7.3-apache-buster
+FROM php:7.4-apache-buster
 
 # Install git, unzip
 RUN apt-get update && apt-get install -y git unzip
@@ -23,9 +21,6 @@ RUN a2enmod rewrite \
 
 # Pull source from git
 RUN git clone https://github.com/jikan-me/jikan-rest.git .
-
-# We need this for PHP 7.3. Otherwise, packages will complain about using Composer 2 with 7.4.
-RUN composer require composer/package-versions-deprecated
 
 # Update and install dependencies
 RUN composer update --prefer-dist --prefer-stable  --no-progress --no-interaction
