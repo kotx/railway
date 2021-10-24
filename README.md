@@ -1,6 +1,8 @@
 # kotx/railway
 
-A bunch of Railway configurations that should work.
+A bunch of Railway configurations that should just work(tm).
+
+These should work with Docker too.
 
 ## Configs
 
