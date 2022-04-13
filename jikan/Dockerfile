@@ -35,11 +35,11 @@ ENV SOURCE=local
 ENV DB_CACHING=true
 ENV DB_CONNECTION=mongodb
 
-## Use Redis
+## Use caching
 ENV CACHING=true
-ENV CACHE_DRIVER=redis
+#ENV CACHE_DRIVER=redis
 ENV CACHE_METHOD=queue
-ENV QUEUE_CONNECTION=redis
+#ENV QUEUE_CONNECTION=redis
 
 # Jikan needs permissions to write to logs & such
 RUN chmod -R a+w /var/www/jikan-rest/storage
